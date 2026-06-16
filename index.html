@@ -1,1 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adultização Infantojuvenil e o Papel da Família</title>
+    <style>
+        /* === Reset básico e estilo global === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f3f0;
+            color: #2d2a24;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 2.5rem 2.8rem;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        /* === Cabeçalho === */
+        .header {
+            border-bottom: 3px solid #c44536;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d2a24;
+            letter-spacing: -0.5px;
+        }
+
+        .header .categoria {
+            font-size: 0.95rem;
+            background: #efeae4;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            color: #5a4e42;
+        }
+
+        /* === Títulos === */
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #3a322a;
+            border-left: 5px solid #c44536;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #4d4036;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #5a4e42;
+            font-weight: 600;
+        }
+
+        /* === Parágrafos e listas === */
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 0.8rem 0 1.2rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* === Bloco de destaque (resumo) === */
+        .resumo-box {
+            background: #f9f6f2;
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0;
+            border-left: 6px solid #c44536;
+        }
+
+        .resumo-box strong {
+            color: #a33b2e;
+        }
+
+        /* === Citações / referências internas === */
+        .citacao {
+            font-style: italic;
+            color: #5a4e42;
+            background: #f4f1ed;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            margin: 1.2rem 0;
+        }
+
+        /* === Tabela cronograma === */
+        .tabela-cronograma {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        .tabela-cronograma th {
+            background: #d9cfc4;
+            color: #2d2a24;
+            font-weight: 600;
+            padding: 0.9rem 0.8rem;
+            text-align: left;
+            border: 1px solid #cbbdb0;
+        }
+
+        .tabela-cronograma td {
+            padding: 0.8rem;
+            border: 1px solid #dcd3c9;
+            background: #fefcf9;
+        }
+
+        .tabela-cronograma tr:nth-child(even) td {
+            background: #f8f5f1;
+        }
+
+        /* === Lista de referências === */
+        .referencias {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .referencias li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.8rem;
+            text-indent: -1.8rem;
+        }
+
+        /* === Rodapé === */
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px dashed #ddd6ce;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b5f53;
+        }
+
+        /* === Botão para interação (JavaScript) === */
+        .btn-interativo {
+            background: #c44536;
+            color: #fff;
+            border: none;
+            padding: 0.7rem 1.8rem;
+            font-size: 1rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.25s ease;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            box-shadow: 0 4px 8px rgba(196, 69, 54, 0.2);
+        }
+
+        .btn-interativo:hover {
+            background: #a33426;
+        }
+
+        .btn-interativo.secundario {
+            background: #7f6b5c;
+            box-shadow: 0 4px 8px rgba(127, 107, 92, 0.2);
+        }
+
+        .btn-interativo.secundario:hover {
+            background: #635347;
+        }
+
+        .mensagem-dinamica {
+            background: #f0ebe5;
+            padding: 1rem 1.8rem;
+            border-radius: 40px;
+            margin: 1.2rem 0 0.5rem;
+            font-weight: 500;
+            color: #3a322a;
+            display: inline-block;
+        }
+
+        /* === Responsividade === */
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .tabela-cronograma {
+                font-size: 0.85rem;
+            }
+            .tabela-cronograma th,
+            .tabela-cronograma td {
+                padding: 0.5rem 0.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app">
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header">
+        <h1>🧑‍🏫 Adultização Infantojuvenil <br /><span style="font-size:1.3rem;">e o Papel da Família</span></h1>
+        <span class="categoria">Ciências Sociais · Ciências Humanas</span>
+    </header>
+
+    <!-- ===== RESUMO ===== -->
+    <section>
+        <div class="resumo-box">
+            <h3 style="margin-top:0; border-left:none; padding-left:0; color:#a33b2e;">📌 Resumo</h3>
+            <p>
+                Este estudo analisa a gestação na adolescência a partir de sua relação com a <strong>permissividade parental</strong> e a <strong>ausência de limites</strong> no ambiente familiar. Caracteriza-se como uma pesquisa qualitativa, delineada por meio de estudo de caso e fundamentada em levantamento bibliográfico de produções científicas e indicadores de saúde reprodutiva em comunidades de vulnerabilidade social. O objetivo consiste em investigar como a omissão educativa dos responsáveis influencia a exposição de adolescentes do sexo feminino a contextos de erotização precoce, pressões sociais e grupos de pares. Os resultados evidenciam que a fragilidade da autoridade parental e a escassez de acompanhamento adequado ampliam a vulnerabilidade infantojuvenil frente a riscos biossociais e comportamentos de risco. Em contrapartida, o fortalecimento do papel educativo do núcleo familiar e a implementação de ações orientadoras aos responsáveis atuam diretamente na mitigação do problema. Conclui-se que uma estrutura familiar pautada no diálogo, no monitoramento contínuo e no estabelecimento de limites constitui um fator protetor indispensável, contribuindo tanto para a redução da evasão escolar quanto para a prevenção da gravidez precoce.
+            </p>
+            <p><strong>Palavras-chave:</strong> Vulnerabilidade Social; Prevenção; Adultização; Família.</p>
+        </div>
+    </section>
+
+    <!-- ===== INTRODUÇÃO ===== -->
+    <section>
+        <h2>1. Introdução</h2>
+        <p>
+            A transição para a vida adulta configura-se como um período complexo, no qual a busca por pertencimento e a influência dos grupos de pares exercem forte impacto sobre os indivíduos. Nesse cenário, a instituição familiar atua não apenas no provimento de cuidados básicos, mas como a principal mediadora no processo de socialização e na construção de repertório crítico dos jovens. Contudo, a escassez de diálogo no ambiente doméstico acerca de valores, segurança e critérios de confiança pode comprometer o desenvolvimento da autonomia infanto-juvenil.
+        </p>
+        <p>
+            A ausência de orientações claras sobre limites individuais e pressões sociais eleva a vulnerabilidade de adolescentes, dificultando o desenvolvimento de comportamentos assertivos e a capacidade de rejeitar dinâmicas prejudiciais. Diante disso, o presente projeto aborda como tema o <strong>impacto do distanciamento familiar e da ausência de limites na vulnerabilidade juvenil</strong>.
+        </p>
+        <p>
+            <strong>Pergunta-problema:</strong> <em>“Como a omissão da família em educar sobre limites e amizade expõe meninas ao risco da gravidez indesejada?”</em>
+        </p>
+        <p>
+            Dessa forma, o estudo busca revelar que, para além da carência de informações estritamente biológicas ou técnicas, a ausência de uma base afetiva sólida e de diretrizes familiares claras atua como fator determinante para o surgimento de consequências de longo prazo, tornando as ações de conscientização externa ferramentas essenciais de proteção social.
+        </p>
+    </section>
+
+    <!-- ===== HIPÓTESES ===== -->
+    <section>
+        <h2>1.1 Hipóteses</h2>
+        <p>
+            A presente proposta tem como objetivo desenvolver uma pesquisa de campo na área das Ciências Sociais, visando analisar minuciosamente as percepções de pais e responsáveis acerca do fenômeno da sexualização e da erotização na infância e na adolescência na atualidade. A investigação busca compreender se este grupo de adultos identifica e reconhece a existência de pressões sociais contemporâneas, vindas das mídias digitais, do mercado de consumo e do convívio social, que induzem seus filhos à adoção de comportamentos adultos precoces.
+        </p>
+        <p>
+            O estudo fundamenta-se na perspectiva da proteção integral de crianças e adolescentes, adotando um posicionamento crítico em relação à erotização precoce. <strong>Parte-se da hipótese</strong> de que a ausência de diálogo sobre limites e relações interpessoais contribui para a vulnerabilidade juvenil, levando adolescentes a aceitarem situações de risco em busca de pertencimento social ou aceitação entre pares.
+        </p>
+        <p>
+            Entre os aspectos positivos dessas alternativas destacam-se o incentivo ao diálogo familiar, a prevenção de situações de vulnerabilidade e a ampliação do conhecimento sobre limites e relações saudáveis. Como limitações, considera-se a possível resistência de algumas famílias em participar das ações propostas, bem como dificuldades em abordar temas sensíveis no ambiente doméstico e a limitação de tempo para acompanhamento contínuo.
+        </p>
+    </section>
+
+    <!-- ===== JUSTIFICATIVA ===== -->
+    <section>
+        <h2>1.2 Justificativa</h2>
+        <p>
+            A necessidade desta pesquisa nasce da percepção de que, por trás dos números da gravidez na adolescência, existem histórias de meninas que, muitas vezes, caminham sozinhas em suas descobertas. No dia a dia, percebemos que não basta oferecer acesso a métodos de saúde se não houver, em casa, o alicerce do diálogo. O silêncio da família sobre temas como o valor das amizades e a importância de respeitar os próprios limites acaba deixando um vazio.
+        </p>
+        <p>
+            O que motiva este estudo é o desejo de olhar para a prevenção como um gesto de afeto e proteção. Quando uma família ensina uma menina a entender o que é uma amizade saudável e onde terminam os seus limites físicos e emocionais, ela está entregando a essa jovem uma bússola para a vida. Investigar como essa omissão acontece é fundamental para podermos auxiliar as famílias a retomarem seu papel de porto seguro.
+        </p>
+        <p>
+            Dessa forma, o trabalho se justifica pelo seu potencial de sensibilizar pais, educadores e a sociedade sobre o fato de que educar para a vida vai muito além da instrução escolar.
+        </p>
+    </section>
+
+    <!-- ===== OBJETIVOS ===== -->
+    <section>
+        <h2>2. Objetivo Geral</h2>
+        <p><strong>Romper o ciclo de vulnerabilidade em que muitos jovens se encontram devido ao silêncio doméstico.</strong></p>
+
+        <h3>2.1 Objetivos Específicos</h3>
+        <ul>
+            <li>Orientar e conscientizar as famílias, buscando entender o que impede os pais de conversarem com os filhos – sejam seus próprios traumas, a correria do dia a dia ou o medo de tocar em temas difíceis.</li>
+            <li>Criar momentos de fala e apresentações que usem uma linguagem simples e direta, tratando de temas como o valor das amizades, os perigos dos vícios e a importância de saber dizer “não”.</li>
+            <li>Provocar a reflexão nos adolescentes sobre suas próprias escolhas e como eles podem se cuidar melhor nesse mundo tão complexo.</li>
+            <li>Analisar e fortalecer a autonomia dessas meninas, para que, ao final desse processo, elas se sintam seguras e donas de suas decisões, reduzindo o risco de uma gravidez indesejada através do autoconhecimento e da percepção clara de seus próprios limites.</li>
+        </ul>
+    </section>
+
+    <!-- ===== FUNDAMENTAÇÃO TEÓRICA ===== -->
+    <section>
+        <h2>3. Fundamentação Teórica</h2>
+
+        <h3>3.1 A Adolescência e suas Transformações</h3>
+        <p>
+            A adolescência é um período sensível que demanda atenção e cuidado, sendo caracterizada pela Organização Mundial da Saúde (OMS, 2021) como a transição crucial entre a infância e a fase adulta. Esse estágio é marcado por profundas transformações biológicas, maturacionais e nas redes de sociabilidade do jovem. Conforme a teoria do desenvolvimento psicossocial de Erikson (1976), o indivíduo busca consolidar sua identidade nessa fase, o que intensifica a necessidade de pertencimento e aceitação dentro de grupos sociais.
+        </p>
+
+        <h3>3.2 O Papel da Família no Desenvolvimento dos Adolescentes</h3>
+        <p>
+            Ressaltamos que a família deve figurar como o principal espaço de proteção, socialização primária e orientação. É no núcleo familiar que o diálogo constante e o estabelecimento de limites claros por parte dos responsáveis garantem o suporte necessário para um desenvolvimento psíquico e emocional saudável (MINUCHIN, 2009). Essa prerrogativa é amparada juridicamente pelo princípio da proteção integral, o qual estabelece que é dever absoluto da família assegurar os direitos fundamentais na infância e na juventude (BRASIL, 1990).
+        </p>
+        <div class="citacao">
+            “Essa dinâmica de sobrevivência que afasta os cuidadores do ambiente doméstico é ilustrada de forma visceral na literatura brasileira por Carolina Maria de Jesus (2014).”
+        </div>
+
+        <h3>3.3 A Influência das Amizades e da Pressão Social</h3>
+        <p>
+            A influência dos grupos de pares exerce papel central no desenvolvimento social durante a adolescência, uma vez que essa fase é marcada pela intensificação das interações sociais e pela busca de pertencimento. Nesse contexto, as amizades tornam-se uma importante referência de comportamento, valores e atitudes, podendo impactar diretamente as escolhas e a construção da identidade do adolescente.
+        </p>
+        <p>
+            A necessidade de aceitação social pode levar o jovem a ajustar seu comportamento às expectativas do grupo, mesmo quando estas não correspondem aos seus próprios valores ou limites pessoais. A dificuldade de dizer “não” emerge, nesse cenário, como um fator relevante, especialmente quando há receio de rejeição ou exclusão social.
+        </p>
+
+        <h3>3.4 Sexualização Precoce na Infância e Adolescência</h3>
+        <p>
+            O fenômeno da sexualização precoce – também referenciado na literatura científica como erotização infantojuvenil prematura – caracteriza-se pela atribuição de um valor predominantemente sexual a indivíduos que se encontram em etapas iniciais do desenvolvimento biológico, cognitivo e emocional. Sob a ótica sociológica, esse processo manifesta-se quando a expressão, o vestuário, a postura e o comportamento de crianças e adolescentes são forçados a se alinhar aos padrões de apelo estritamente adultos.
+        </p>
+        <p>
+            Na contemporaneidade, esse cenário é drasticamente amplificado pela onipresença das redes sociais, da indústria musical e das mídias digitais de massa, que atuam como potentes vetores de disseminação cultural. Os algoritmos das plataformas digitais frequentemente impulsionam conteúdos hipersexualizados.
+        </p>
+
+        <h3>3.5 Gravidez na Adolescência</h3>
+        <p>
+            A gestação na adolescência – conceitualmente delimitada pela Organização Mundial da Saúde (OMS) como a ocorrência da gravidez na faixa etária entre 10 e 19 anos – constitui um fenômeno complexo e multifatorial que transcende a dimensão puramente biológica.
+        </p>
+        <p>
+            Os impactos decorrentes desse fenômeno reverberam de maneira severa e concomitante nas esferas emocional, social e escolar da jovem gestante. Do ponto de vista psicológico, a maternidade precoce frequentemente atua como um fator desencadeante de crises de identidade, episódios de ansiedade, depressão pós-parto e isolamento social.
+        </p>
+
+        <h3>3.6 A Importância do Diálogo e da Educação Preventiva</h3>
+        <p>
+            O estabelecimento de diálogos claros sobre limites individuais constitui a base para que crianças e adolescentes compreendam seus direitos e deveres nas interações sociais. Conversar abertamente sobre o respeito ao próprio corpo e ao espaço do outro funciona como uma ferramenta de proteção primária.
+        </p>
+        <p>
+            A educação emocional consiste no processo de ensinar os jovens a reconhecerem, nomearem e gerenciarem suas próprias emoções de maneira saudável. Quando o ambiente familiar e escolar oferece esse suporte, o adolescente desenvolve maior resiliência e maturidade para lidar com frustrações.
+        </p>
+
+        <h3>3.7 O Papel da Escola e da Sociedade</h3>
+        <p>
+            A instituição de ensino desempenha um papel estratégico que vai além da formação acadêmica tradicional, configurando-se como um espaço privilegiado para a conscientização social e cidadã de crianças e adolescentes. A implementação de palestras, oficinas e projetos pedagógicos interdisciplinares atua de forma direta na disseminação de informações científicas e preventivas sobre saúde reprodutiva e limites relacionais.
+        </p>
+        <p>
+            A prevenção eficaz da gravidez na adolescência e da vulnerabilidade infantojuvenil exige o engajamento coletivo de toda a comunidade, incluindo associações de moradores, centros de saúde e organizações locais.
+        </p>
+    </section>
+
+    <!-- ===== METODOLOGIA ===== -->
+    <section>
+        <h2>4. Metodologia</h2>
+        <p>
+            A presente pesquisa será executada por meio de uma abordagem <strong>qualitativa</strong> e de natureza <strong>bibliográfica</strong>. Conforme aponta Gil (2022), a pesquisa bibliográfica é desenvolvida a partir de material já elaborado, constituído principalmente de livros e artigos científicos, permitindo uma cobertura ampla dos fenômenos investigados.
+        </p>
+        <p>
+            Para a execução deste trabalho, serão analisados artigos científicos, guias de orientação parental e relatórios técnicos de instituições de saúde e acolhimento infantojuvenil, tais como o Hospital Pequeno Príncipe (2024) e o portal Escola para Pais (2025). A coleta de dados irá focar na correlação entre os estilos parentais e o desenvolvimento da autonomia.
+        </p>
+        <p>
+            O registro de todas as etapas de leitura, reflexões e conexões teóricas será realizado de forma cronológica no <strong>Diário de Bordo do Projeto</strong>.
+        </p>
+
+        <h3>4.1 Recursos</h3>
+        <p>
+            Para a realização da pesquisa, serão utilizados recursos materiais, tecnológicos e bibliográficos que auxiliem no desenvolvimento das atividades e na coleta de informações. Entre os recursos, destacam-se: livros, artigos científicos, revistas, computador, celular, internet, vídeos educativos, formulários de pesquisa, materiais impressos e aplicativos digitais relacionados ao tema estudado.
+        </p>
+
+        <h3>4.2 Cronograma</h3>
+        <table class="tabela-cronograma">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Atividade Desenvolvida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>10/03/2026</td><td>Reunião para escolher o tema da pesquisa sobre erotização precoce e adultização.</td></tr>
+                <tr><td>17/03/2026</td><td>Definição do foco da pesquisa voltado para a opinião dos pais e responsáveis.</td></tr>
+                <tr><td>24/03/2026</td><td>Início das pesquisas em livros, artigos e sites acadêmicos. Estudo de autores como Erik Erikson e Neil Postman.</td></tr>
+                <tr><td>07/04/2026</td><td>Leitura e análise de textos sobre desenvolvimento infantil e importância da família.</td></tr>
+                <tr><td>14/04/2026</td><td>Estudo da obra 'Quarto de Despejo' para relacionar vulnerabilidade social e diálogo familiar.</td></tr>
+                <tr><td>28/04/2026</td><td>Organização da metodologia da pesquisa e definição do tipo de pesquisa qualitativa e bibliográfica.</td></tr>
+                <tr><td>05/05/2026</td><td>Pesquisa de materiais e relatórios sobre orientação familiar, incluindo conteúdos do Hospital Pequeno Príncipe.</td></tr>
+                <tr><td>12/05/2026</td><td>Revisão e ajuste dos textos da pesquisa, mantendo o foco apenas na visão dos pais.</td></tr>
+                <tr><td>17/05/2026</td><td>Revisão ortográfica, organização das citações e referências conforme as normas da ABNT.</td></tr>
+                <tr><td>26/05/2026</td><td>Finalização do pré-projeto, revisão geral e conclusão do cronograma da pesquisa.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ===== REFERÊNCIAS ===== -->
+    <section>
+        <h2>Referências Bibliográficas</h2>
+        <ul class="referencias">
+            <li>BAUMRIND, Diana. Effects of authoritative parental control on child behavior. <strong>Child Development</strong>, [s. l.], v. 37, n. 4, p. 887-907, 1966.</li>
+            <li>BRASIL. Lei nº 8.069, de 13 de julho de 1990. Dispõe sobre o Estatuto da Criança e do Adolescente e dá outras providências. Brasília, DF: Presidência da República, 1990.</li>
+            <li>ERIKSON, Erik H. <strong>Infância e sociedade</strong>. 2. ed. Rio de Janeiro: Zahar Editores, 1976.</li>
+            <li>GIL, Antônio Carlos. <strong>Como elaborar projetos de pesquisa</strong>. 7. ed. São Paulo: Atlas, 2022.</li>
+            <li>HOSPITAL PEQUENO PRÍNCIPE. Relatório institucional de saúde infantojuvenil. Curitiba: HPP, 2024. Disponível em: <a href="https://pequenoprincipe.org.br/noticia/erotizacao-precoce-traz-danos-as-criancas/" target="_blank">https://pequenoprincipe.org.br/noticia/erotizacao-precoce-traz-danos-as-criancas/</a></li>
+            <li>JESUS, Carolina Maria de. <strong>Quarto de despejo: diário de uma favelada</strong>. 10. ed. São Paulo: Ática, 2014.</li>
+            <li>MINUCHIN, Salvador. <strong>Famílias e casais: do sintoma ao sistema</strong>. Porto Alegre: Artmed, 2009.</li>
+            <li>ORGANIZAÇÃO MUNDIAL DA SAÚDE (OMS). <strong>Saúde do adolescente e do jovem</strong>. Genebra: OMS, 2021.</li>
+            <li>PORTAL ESCOLA PARA PAIS. Guia de orientação parental e limites na contemporaneidade. São Paulo: Escola para Pais, 2025. Disponível em: <a href="https://www.escolaparapais.blog.br/2017/01/o-papel-dos-pais-na-educacao-sexual/" target="_blank">https://www.escolaparapais.blog.br/2017/01/o-papel-dos-pais-na-educacao-sexual/</a></li>
+            <li>POSTMAN, Neil. <strong>O desaparecimento da infância</strong>. Rio de Janeiro: Grafia, 1999.</li>
+        </ul>
+    </section>
+
+    <!-- ===== INTERAÇÃO COM JAVASCRIPT ===== -->
+    <section style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 2px solid #e0d8cf;">
+        <h2 style="border-left-color: #7f6b5c;">💡 Reflexão interativa</h2>
+        <p style="margin-bottom: 0.5rem;">Clique nos botões abaixo para ver mensagens relacionadas ao tema da pesquisa:</p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1rem 0 1.2rem;">
+            <button class="btn-interativo" id="btnDialogo">🗣️ Diálogo Familiar</button>
+            <button class="btn-interativo secundario" id="btnLimites">🛡️ Limites e Proteção</button>
+            <button class="btn-interativo" id="btnPrevencao">🧠 Prevenção e Autonomia</button>
+        </div>
+
+        <div id="areaMensagem" class="mensagem-dinamica">
+            👆 Clique em um botão para exibir uma reflexão.
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <p>Projeto de pesquisa — Ciências Sociais · Ciências Humanas</p>
+        <p style="font-size:0.8rem; opacity:0.7;">FENAAH/S · Feira Científica do Núcleo de Atividades de Altas Habilidades/Superdotação</p>
+    </footer>
+
+</div>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+    (function() {
+        const area = document.getElementById('areaMensagem');
+
+        const mensagens = {
+            dialogo: '🗣️ "O diálogo constante e o estabelecimento de limites claros por parte dos responsáveis garantem o suporte necessário para um desenvolvimento psíquico e emocional saudável." — Minuchin (2009)',
+            limites: '🛡️ "O silêncio da família sobre temas como o valor das amizades e a importância de respeitar os próprios limites acaba deixando um vazio que pode ser ocupado por influências nocivas."',
+            prevencao: '🧠 "A prevenção eficaz da gravidez na adolescência exige o engajamento coletivo de toda a comunidade, integrando escola, família e serviços de saúde."'
+        };
+
+        document.getElementById('btnDialogo').addEventListener('click', function() {
+            area.textContent = mensagens.dialogo;
+        });
+
+        document.getElementById('btnLimites').addEventListener('click', function() {
+            area.textContent = mensagens.limites;
+        });
+
+        document.getElementById('btnPrevencao').addEventListener('click', function() {
+            area.textContent = mensagens.prevencao;
+        });
+
+        // Mensagem inicial (já está no HTML, mas podemos sobrescrever se desejar)
+        // Deixamos a mensagem inicial como está no HTML.
+    })();
+</script>
+
+</body>
+</html>
